@@ -1,0 +1,53 @@
+name: CardSimulationCardReaderProvider
+options:
+  bundleIdPrefix: de.gematik.ti.cardreader.provider
+  deploymentTarget:
+    macOS: 10.12
+    iOS: 12.1
+  minimumXcodeGenVersion: 2.3.0
+settings:
+  base:
+    SWIFT_VERSION: 5.0
+    ALWAYS_SEARCH_USER_PATHS: NO
+    FRAMEWORK_SEARCH_PATHS: "$(inherited)"
+  configs:
+    Release:
+      SWIFT_COMPILATION_MODE: wholemodule
+    Debug:
+      SWIFT_COMPILATION_MODE: incremental
+targets:
+  CardSimulationCardReaderProvider:
+    type: framework
+    platform: macOS
+    info:
+      path: DerivedData/CardSimulationCardReaderProvider/Info.plist
+    sources:
+      - Sources
+    dependencies:
+      - carthage: ASN1Kit
+      - carthage: CardReaderProviderApi
+      - carthage: CardReaderAccess
+      - carthage: CardSimulationLoader
+      - carthage: SwiftSocket
+      - carthage: GemCommonsKit
+      - carthage: ObjCCommonsKit
+    scheme:
+      testTargets:
+        - CardSimulationCardReaderProviderTests
+      gatherCoverageData: true
+  CardSimulationCardReaderProviderTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - Tests
+    dependencies:
+      - target: CardSimulationCardReaderProvider
+      - carthage: Nimble
+      - carthage: ObjCCommonsKit
+      - carthage: AEXML
+      - carthage: DataKit
+        link: false
+      - carthage: StreamReader
+        link: false
+    gatherCoverageData: true
+buildImplicitDependencies: true

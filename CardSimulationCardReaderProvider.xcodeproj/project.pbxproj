@@ -1,0 +1,656 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0125863EAB3A965492976A821C739F8F /* SimulatorCardReaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7E2F744B29437C411FD851E54B0288 /* SimulatorCardReaderController.swift */; };
+		01F1867F18C0EE3BED57344B4C80BD17 /* SimulatorCardReaderControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19A3AFFA53E6A9D77DD9A5C2B8EB427 /* SimulatorCardReaderControllerTest.swift */; };
+		0A75BDB69A0BDEB3C875FA5018DF090A /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19444EDD26126F2E51AE2AADFDA89C87 /* XCTestManifests.swift */; };
+		0D3E0E56BC8738D273C9A6FBA54ECD25 /* CardReaderAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40828C46FABBA0EB87FC8645FB9F33C2 /* CardReaderAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0E16DC65A9BCA9B3E66607603BFD59A6 /* SimulatorCardChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AABEAF892DF17F16F89653FF79168D /* SimulatorCardChannel.swift */; };
+		1942DF8CF3C46D6A573B661DC61F9F52 /* ObjCCommonsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF558B91022964AB98D6E339337C5506 /* ObjCCommonsKit.framework */; };
+		2D17CD081AA31465B73ACB02D2DD282E /* SwiftSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA96C1C87ECFDE58F6A15DB74AA5EC6 /* SwiftSocket.framework */; };
+		3406A5E0735D36AC07982C1735608D18 /* SimulatorCardReaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382422DD3D2765E3C715BB1762DCFC1C /* SimulatorCardReaderTest.swift */; };
+		348509C050B56E6290EAD76261B58F8B /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D584263A9F99A552EC7F7D006A4781E6 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		40CDAB78FA346BA2F9EA44DFDE87888A /* SimulatorCardChannelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D61C7C131325DA65AD78F6CF83379 /* SimulatorCardChannelTest.swift */; };
+		4897E94548A4C328034FA7317FBA3B69 /* SimulatorCardTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A04D17EAF9E0DF38FF7DA26B7AB29C /* SimulatorCardTest.swift */; };
+		4C46966490968B04BD5932F5A8891991 /* CardSimulationLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D6159A0CA653C1A3F1793E9D925FE9 /* CardSimulationLoader.framework */; };
+		4C514AE0C5462A3A5A4F1F961F96208B /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A07BDE36C8EEA8AD28F566CF642AADC /* AEXML.framework */; };
+		53EAF61ADACB71B88490E114B061975D /* TCPClientExtStreamingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4966D8AA9BD94456091BD9C65A29A40C /* TCPClientExtStreamingTest.swift */; };
+		58B6B4CEA0E3B2F14CC8FAF1F3241E66 /* CardReaderProviderApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8AF3B48BC0351AB9A8EA3399901C56C /* CardReaderProviderApi.framework */; };
+		59DDA413E351A1C1DB8E4CCF3DA03B78 /* CardSimulationCardReaderProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBC672538E66ADB46DD4DD55C44696E /* CardSimulationCardReaderProvider.framework */; };
+		5E5D84EA247C7474DCB7DFEF71426297 /* ObjCCommonsKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FF558B91022964AB98D6E339337C5506 /* ObjCCommonsKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6E5682587E07363AA47DE234B9A5060F /* DataKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED641762AD8C3C1FFF486585B6E19A50 /* DataKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		79D97F906BD7A33A2DDD6E54BC03C7D2 /* MockSimulationRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666827757EC6FE9E37ADD7EAF9A7CA52 /* MockSimulationRunner.swift */; };
+		888920E934FA28CAED44F569A51A5123 /* StreamReader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 33CF799FF298837E35DBE94D6C545793 /* StreamReader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8F7859741099B9C8781320E1CA2D7941 /* SimulatorCardReaderProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C07BD4C1A521468D374AF525F889F4 /* SimulatorCardReaderProviderTest.swift */; };
+		96214434134198D7F46E2588AC7A5370 /* GemCommonsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8F95809396AE0F80A04A7167C9FD7B /* GemCommonsKit.framework */; };
+		9A18F7F59564EC21F457591867302398 /* InputStreaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE460AC1D61CDBCBE30883FA46C4562A /* InputStreaming.swift */; };
+		9A598F1C647EB9C2772815F5EF7858C1 /* ObjCCommonsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF558B91022964AB98D6E339337C5506 /* ObjCCommonsKit.framework */; };
+		9CB9B01D5699D3F2F43C79B6FCA6E749 /* MockSimulationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E97DE3005DD16761AF910AE5D32DB37 /* MockSimulationManager.swift */; };
+		A4139D072F4F2167D1F998132F6A8247 /* OutputStreaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3786BD9951F89C9E9EEF82DE29821615 /* OutputStreaming.swift */; };
+		A43143C14913FDE6D39A8D5E9944C06E /* CardSimulationLoader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55D6159A0CA653C1A3F1793E9D925FE9 /* CardSimulationLoader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1CF9BDD915E006F0012618D04B1B4BE /* SwiftSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA96C1C87ECFDE58F6A15DB74AA5EC6 /* SwiftSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B36AF5FD2FCBDA7DA910055728A3A945 /* DataExtBerTLVTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6168EA6CDDF775BE3D347730A28C7A0B /* DataExtBerTLVTest.swift */; };
+		B3A4386E1598982652CA14E4148E3567 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D584263A9F99A552EC7F7D006A4781E6 /* Nimble.framework */; };
+		B605F84BE5C60C9572CFF572E0B32314 /* SimulatorCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C44EA6D5AA55BD05E216176539D755 /* SimulatorCard.swift */; };
+		B790D52C52BFD03C69DF5FA4283EE13A /* ASN1Kit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2023CEDA4CBFEB4A8C09FDE72B05DF4A /* ASN1Kit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BDF70E8A1ED18BA1D1B978CF88094438 /* SimulatorCardReaderProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A99BEDC71B6A2EFB2ABED82733B29A9 /* SimulatorCardReaderProvider.swift */; };
+		C3055321807BC3681C046F504629F46E /* GemCommonsKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8F95809396AE0F80A04A7167C9FD7B /* GemCommonsKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CB2064C554054B2AFA5F083B0A1AE699 /* CardReaderAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40828C46FABBA0EB87FC8645FB9F33C2 /* CardReaderAccess.framework */; };
+		DC49A9668874B66FC20E57EB3E28BABB /* CardSimulationCardReaderProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBC672538E66ADB46DD4DD55C44696E /* CardSimulationCardReaderProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DE1086CEB5CCC70C9283F57660143E3D /* CardReaderProviderApi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A8AF3B48BC0351AB9A8EA3399901C56C /* CardReaderProviderApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E483775F04437AF8BDD013CC8E04797B /* ASN1Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2023CEDA4CBFEB4A8C09FDE72B05DF4A /* ASN1Kit.framework */; };
+		ED042A3F23F363DEF9B78E51225BA236 /* SimulatorCardReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85953C3D214005B243B1457FA950F4E0 /* SimulatorCardReader.swift */; };
+		EFDA85D829E005640A9539ED122508B8 /* TCPClient+Streaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE96483E2E157E4D22B6DB77317BE662 /* TCPClient+Streaming.swift */; };
+		F2EB7B40B98580C7C21B243F631F452D /* AEXML.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A07BDE36C8EEA8AD28F566CF642AADC /* AEXML.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FBF7B0A19B08DA54846A8769A318873D /* Data+BerTLV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609CC70EB7EE3E3A830C190F1F2A4C5B /* Data+BerTLV.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		86B32568F8DB3AC770091DC9C4554690 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49FB3BC09EDF64B91751FA780DB233D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 006B4F440E1BBC0845688DF8CCBB48FE;
+			remoteInfo = CardSimulationCardReaderProvider;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3F59BE85FB04307430FC80547B6411F6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DC49A9668874B66FC20E57EB3E28BABB /* CardSimulationCardReaderProvider.framework in Embed Frameworks */,
+				F2EB7B40B98580C7C21B243F631F452D /* AEXML.framework in Embed Frameworks */,
+				B790D52C52BFD03C69DF5FA4283EE13A /* ASN1Kit.framework in Embed Frameworks */,
+				0D3E0E56BC8738D273C9A6FBA54ECD25 /* CardReaderAccess.framework in Embed Frameworks */,
+				DE1086CEB5CCC70C9283F57660143E3D /* CardReaderProviderApi.framework in Embed Frameworks */,
+				A43143C14913FDE6D39A8D5E9944C06E /* CardSimulationLoader.framework in Embed Frameworks */,
+				6E5682587E07363AA47DE234B9A5060F /* DataKit.framework in Embed Frameworks */,
+				C3055321807BC3681C046F504629F46E /* GemCommonsKit.framework in Embed Frameworks */,
+				348509C050B56E6290EAD76261B58F8B /* Nimble.framework in Embed Frameworks */,
+				5E5D84EA247C7474DCB7DFEF71426297 /* ObjCCommonsKit.framework in Embed Frameworks */,
+				888920E934FA28CAED44F569A51A5123 /* StreamReader.framework in Embed Frameworks */,
+				B1CF9BDD915E006F0012618D04B1B4BE /* SwiftSocket.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0F8F95809396AE0F80A04A7167C9FD7B /* GemCommonsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GemCommonsKit.framework; sourceTree = "<group>"; };
+		19444EDD26126F2E51AE2AADFDA89C87 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		2023CEDA4CBFEB4A8C09FDE72B05DF4A /* ASN1Kit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ASN1Kit.framework; sourceTree = "<group>"; };
+		22AABEAF892DF17F16F89653FF79168D /* SimulatorCardChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorCardChannel.swift; sourceTree = "<group>"; };
+		33CF799FF298837E35DBE94D6C545793 /* StreamReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StreamReader.framework; sourceTree = "<group>"; };
+		3786BD9951F89C9E9EEF82DE29821615 /* OutputStreaming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputStreaming.swift; sourceTree = "<group>"; };
+		382422DD3D2765E3C715BB1762DCFC1C /* SimulatorCardReaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorCardReaderTest.swift; sourceTree = "<group>"; };
+		39E3792D40C5AF8FEE4C1C899C94E5AB /* CardSimulationCardReaderProviderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardSimulationCardReaderProviderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		40828C46FABBA0EB87FC8645FB9F33C2 /* CardReaderAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CardReaderAccess.framework; sourceTree = "<group>"; };
+		4966D8AA9BD94456091BD9C65A29A40C /* TCPClientExtStreamingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPClientExtStreamingTest.swift; sourceTree = "<group>"; };
+		4DBC672538E66ADB46DD4DD55C44696E /* CardSimulationCardReaderProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CardSimulationCardReaderProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55D6159A0CA653C1A3F1793E9D925FE9 /* CardSimulationLoader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CardSimulationLoader.framework; sourceTree = "<group>"; };
+		5A99BEDC71B6A2EFB2ABED82733B29A9 /* SimulatorCardReaderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorCardReaderProvider.swift; sourceTree = "<group>"; };
+		609CC70EB7EE3E3A830C190F1F2A4C5B /* Data+BerTLV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+BerTLV.swift"; sourceTree = "<group>"; };
+		6168EA6CDDF775BE3D347730A28C7A0B /* DataExtBerTLVTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtBerTLVTest.swift; sourceTree = "<group>"; };
+		63C44EA6D5AA55BD05E216176539D755 /* SimulatorCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorCard.swift; sourceTree = "<group>"; };
+		666827757EC6FE9E37ADD7EAF9A7CA52 /* MockSimulationRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSimulationRunner.swift; sourceTree = "<group>"; };
+		7A07BDE36C8EEA8AD28F566CF642AADC /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AEXML.framework; sourceTree = "<group>"; };
+		7E97DE3005DD16761AF910AE5D32DB37 /* MockSimulationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSimulationManager.swift; sourceTree = "<group>"; };
+		85953C3D214005B243B1457FA950F4E0 /* SimulatorCardReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorCardReader.swift; sourceTree = "<group>"; };
+		9CA96C1C87ECFDE58F6A15DB74AA5EC6 /* SwiftSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftSocket.framework; sourceTree = "<group>"; };
+		A19A3AFFA53E6A9D77DD9A5C2B8EB427 /* SimulatorCardReaderControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorCardReaderControllerTest.swift; sourceTree = "<group>"; };
+		A8AF3B48BC0351AB9A8EA3399901C56C /* CardReaderProviderApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CardReaderProviderApi.framework; sourceTree = "<group>"; };
+		A8C07BD4C1A521468D374AF525F889F4 /* SimulatorCardReaderProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorCardReaderProviderTest.swift; sourceTree = "<group>"; };
+		AE96483E2E157E4D22B6DB77317BE662 /* TCPClient+Streaming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TCPClient+Streaming.swift"; sourceTree = "<group>"; };
+		CE2D61C7C131325DA65AD78F6CF83379 /* SimulatorCardChannelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorCardChannelTest.swift; sourceTree = "<group>"; };
+		CE460AC1D61CDBCBE30883FA46C4562A /* InputStreaming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputStreaming.swift; sourceTree = "<group>"; };
+		D584263A9F99A552EC7F7D006A4781E6 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
+		E4A04D17EAF9E0DF38FF7DA26B7AB29C /* SimulatorCardTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorCardTest.swift; sourceTree = "<group>"; };
+		ED641762AD8C3C1FFF486585B6E19A50 /* DataKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DataKit.framework; sourceTree = "<group>"; };
+		FB7E2F744B29437C411FD851E54B0288 /* SimulatorCardReaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorCardReaderController.swift; sourceTree = "<group>"; };
+		FF558B91022964AB98D6E339337C5506 /* ObjCCommonsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ObjCCommonsKit.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A0417F9EAE7907E22A4FCF43B9F84776 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59DDA413E351A1C1DB8E4CCF3DA03B78 /* CardSimulationCardReaderProvider.framework in Frameworks */,
+				B3A4386E1598982652CA14E4148E3567 /* Nimble.framework in Frameworks */,
+				9A598F1C647EB9C2772815F5EF7858C1 /* ObjCCommonsKit.framework in Frameworks */,
+				4C514AE0C5462A3A5A4F1F961F96208B /* AEXML.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE70962F9D173A6AB490798C59B4E05C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E483775F04437AF8BDD013CC8E04797B /* ASN1Kit.framework in Frameworks */,
+				58B6B4CEA0E3B2F14CC8FAF1F3241E66 /* CardReaderProviderApi.framework in Frameworks */,
+				CB2064C554054B2AFA5F083B0A1AE699 /* CardReaderAccess.framework in Frameworks */,
+				4C46966490968B04BD5932F5A8891991 /* CardSimulationLoader.framework in Frameworks */,
+				2D17CD081AA31465B73ACB02D2DD282E /* SwiftSocket.framework in Frameworks */,
+				96214434134198D7F46E2588AC7A5370 /* GemCommonsKit.framework in Frameworks */,
+				1942DF8CF3C46D6A573B661DC61F9F52 /* ObjCCommonsKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0285814AA3FB7CCE917CC04069B4C72D /* CardSimulationCardReaderProviderTests */ = {
+			isa = PBXGroup;
+			children = (
+				7E97DE3005DD16761AF910AE5D32DB37 /* MockSimulationManager.swift */,
+				666827757EC6FE9E37ADD7EAF9A7CA52 /* MockSimulationRunner.swift */,
+				19444EDD26126F2E51AE2AADFDA89C87 /* XCTestManifests.swift */,
+				854EA9109BECF7777994085338D85FDF /* Card */,
+				A063FC956D244CEF607260B367C25804 /* internal */,
+				BF9B1A85BDC8923E272E6C04235EA81B /* Provider */,
+				CAC302382A734E3F9B5C94BAA41FE6D6 /* Reader */,
+			);
+			path = CardSimulationCardReaderProviderTests;
+			sourceTree = "<group>";
+		};
+		076B7135C9BF2FA663D370F99D4ABD26 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				5A99BEDC71B6A2EFB2ABED82733B29A9 /* SimulatorCardReaderProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		5A4600C3D405AD7C032DAD90C235C07A /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				63C44EA6D5AA55BD05E216176539D755 /* SimulatorCard.swift */,
+				22AABEAF892DF17F16F89653FF79168D /* SimulatorCardChannel.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		69BBC5E7D86F7257EC8D36C37C12F10D /* CardSimulationCardReaderProvider */ = {
+			isa = PBXGroup;
+			children = (
+				5A4600C3D405AD7C032DAD90C235C07A /* Card */,
+				CDCA43DCA69F27304A991F8B4AE688C0 /* internal */,
+				076B7135C9BF2FA663D370F99D4ABD26 /* Provider */,
+				E853FD409ECAEC1D3EBF5023DE99F6CA /* Terminal */,
+			);
+			path = CardSimulationCardReaderProvider;
+			sourceTree = "<group>";
+		};
+		6E1E054944F9269B6E226A4C7B06EF6E = {
+			isa = PBXGroup;
+			children = (
+				CB7D915B8E70263DBFB68F9C4F4D35ED /* Sources */,
+				E2E41E0A10A3C3DECE264C3A684E7EDA /* Tests */,
+				E6AA83ABEC891AC6D1C1C61A315A8792 /* Frameworks */,
+				75000E275ED25BDE2311F3B9140DE90E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		75000E275ED25BDE2311F3B9140DE90E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4DBC672538E66ADB46DD4DD55C44696E /* CardSimulationCardReaderProvider.framework */,
+				39E3792D40C5AF8FEE4C1C899C94E5AB /* CardSimulationCardReaderProviderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		854EA9109BECF7777994085338D85FDF /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				CE2D61C7C131325DA65AD78F6CF83379 /* SimulatorCardChannelTest.swift */,
+				E4A04D17EAF9E0DF38FF7DA26B7AB29C /* SimulatorCardTest.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		A063FC956D244CEF607260B367C25804 /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				6168EA6CDDF775BE3D347730A28C7A0B /* DataExtBerTLVTest.swift */,
+				4966D8AA9BD94456091BD9C65A29A40C /* TCPClientExtStreamingTest.swift */,
+			);
+			path = internal;
+			sourceTree = "<group>";
+		};
+		BF9B1A85BDC8923E272E6C04235EA81B /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				A8C07BD4C1A521468D374AF525F889F4 /* SimulatorCardReaderProviderTest.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		CAC302382A734E3F9B5C94BAA41FE6D6 /* Reader */ = {
+			isa = PBXGroup;
+			children = (
+				A19A3AFFA53E6A9D77DD9A5C2B8EB427 /* SimulatorCardReaderControllerTest.swift */,
+				382422DD3D2765E3C715BB1762DCFC1C /* SimulatorCardReaderTest.swift */,
+			);
+			path = Reader;
+			sourceTree = "<group>";
+		};
+		CB7D915B8E70263DBFB68F9C4F4D35ED /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				69BBC5E7D86F7257EC8D36C37C12F10D /* CardSimulationCardReaderProvider */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CDCA43DCA69F27304A991F8B4AE688C0 /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				609CC70EB7EE3E3A830C190F1F2A4C5B /* Data+BerTLV.swift */,
+				CE460AC1D61CDBCBE30883FA46C4562A /* InputStreaming.swift */,
+				3786BD9951F89C9E9EEF82DE29821615 /* OutputStreaming.swift */,
+				AE96483E2E157E4D22B6DB77317BE662 /* TCPClient+Streaming.swift */,
+			);
+			path = internal;
+			sourceTree = "<group>";
+		};
+		E01D7B7738577825CEEB12A36FEBA93D /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				7A07BDE36C8EEA8AD28F566CF642AADC /* AEXML.framework */,
+				2023CEDA4CBFEB4A8C09FDE72B05DF4A /* ASN1Kit.framework */,
+				40828C46FABBA0EB87FC8645FB9F33C2 /* CardReaderAccess.framework */,
+				A8AF3B48BC0351AB9A8EA3399901C56C /* CardReaderProviderApi.framework */,
+				55D6159A0CA653C1A3F1793E9D925FE9 /* CardSimulationLoader.framework */,
+				ED641762AD8C3C1FFF486585B6E19A50 /* DataKit.framework */,
+				0F8F95809396AE0F80A04A7167C9FD7B /* GemCommonsKit.framework */,
+				D584263A9F99A552EC7F7D006A4781E6 /* Nimble.framework */,
+				FF558B91022964AB98D6E339337C5506 /* ObjCCommonsKit.framework */,
+				33CF799FF298837E35DBE94D6C545793 /* StreamReader.framework */,
+				9CA96C1C87ECFDE58F6A15DB74AA5EC6 /* SwiftSocket.framework */,
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
+		E2E41E0A10A3C3DECE264C3A684E7EDA /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0285814AA3FB7CCE917CC04069B4C72D /* CardSimulationCardReaderProviderTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		E6AA83ABEC891AC6D1C1C61A315A8792 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1C5642995CCAD72E318A967E0A8C792 /* Carthage */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E853FD409ECAEC1D3EBF5023DE99F6CA /* Terminal */ = {
+			isa = PBXGroup;
+			children = (
+				85953C3D214005B243B1457FA950F4E0 /* SimulatorCardReader.swift */,
+				FB7E2F744B29437C411FD851E54B0288 /* SimulatorCardReaderController.swift */,
+			);
+			path = Terminal;
+			sourceTree = "<group>";
+		};
+		F1C5642995CCAD72E318A967E0A8C792 /* Carthage */ = {
+			isa = PBXGroup;
+			children = (
+				E01D7B7738577825CEEB12A36FEBA93D /* Mac */,
+			);
+			name = Carthage;
+			path = Carthage/Build;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		006B4F440E1BBC0845688DF8CCBB48FE /* CardSimulationCardReaderProvider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3B88F5BC2455C876659911F39C1144F /* Build configuration list for PBXNativeTarget "CardSimulationCardReaderProvider" */;
+			buildPhases = (
+				A4B04B1876789D73E33BD44E762DCAB5 /* Sources */,
+				EE70962F9D173A6AB490798C59B4E05C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CardSimulationCardReaderProvider;
+			productName = CardSimulationCardReaderProvider;
+			productReference = 4DBC672538E66ADB46DD4DD55C44696E /* CardSimulationCardReaderProvider.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1D978C33C59522BAD5AEA80E691AB50E /* CardSimulationCardReaderProviderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0C4DAFE1C4CD1314EB6A6747AE6D644 /* Build configuration list for PBXNativeTarget "CardSimulationCardReaderProviderTests" */;
+			buildPhases = (
+				CFFC68732F24F877BCCFA4AEB6D3E914 /* Sources */,
+				A0417F9EAE7907E22A4FCF43B9F84776 /* Frameworks */,
+				3F59BE85FB04307430FC80547B6411F6 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7A6331B69839AE68529D37177610B7B /* PBXTargetDependency */,
+			);
+			name = CardSimulationCardReaderProviderTests;
+			productName = CardSimulationCardReaderProviderTests;
+			productReference = 39E3792D40C5AF8FEE4C1C899C94E5AB /* CardSimulationCardReaderProviderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49FB3BC09EDF64B91751FA780DB233D8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1000;
+			};
+			buildConfigurationList = E53E504CB896733AEDC52EAE29536AD1 /* Build configuration list for PBXProject "CardSimulationCardReaderProvider" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6E1E054944F9269B6E226A4C7B06EF6E;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				006B4F440E1BBC0845688DF8CCBB48FE /* CardSimulationCardReaderProvider */,
+				1D978C33C59522BAD5AEA80E691AB50E /* CardSimulationCardReaderProviderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A4B04B1876789D73E33BD44E762DCAB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBF7B0A19B08DA54846A8769A318873D /* Data+BerTLV.swift in Sources */,
+				9A18F7F59564EC21F457591867302398 /* InputStreaming.swift in Sources */,
+				A4139D072F4F2167D1F998132F6A8247 /* OutputStreaming.swift in Sources */,
+				B605F84BE5C60C9572CFF572E0B32314 /* SimulatorCard.swift in Sources */,
+				0E16DC65A9BCA9B3E66607603BFD59A6 /* SimulatorCardChannel.swift in Sources */,
+				ED042A3F23F363DEF9B78E51225BA236 /* SimulatorCardReader.swift in Sources */,
+				0125863EAB3A965492976A821C739F8F /* SimulatorCardReaderController.swift in Sources */,
+				BDF70E8A1ED18BA1D1B978CF88094438 /* SimulatorCardReaderProvider.swift in Sources */,
+				EFDA85D829E005640A9539ED122508B8 /* TCPClient+Streaming.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFFC68732F24F877BCCFA4AEB6D3E914 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B36AF5FD2FCBDA7DA910055728A3A945 /* DataExtBerTLVTest.swift in Sources */,
+				9CB9B01D5699D3F2F43C79B6FCA6E749 /* MockSimulationManager.swift in Sources */,
+				79D97F906BD7A33A2DDD6E54BC03C7D2 /* MockSimulationRunner.swift in Sources */,
+				40CDAB78FA346BA2F9EA44DFDE87888A /* SimulatorCardChannelTest.swift in Sources */,
+				01F1867F18C0EE3BED57344B4C80BD17 /* SimulatorCardReaderControllerTest.swift in Sources */,
+				8F7859741099B9C8781320E1CA2D7941 /* SimulatorCardReaderProviderTest.swift in Sources */,
+				3406A5E0735D36AC07982C1735608D18 /* SimulatorCardReaderTest.swift in Sources */,
+				4897E94548A4C328034FA7317FBA3B69 /* SimulatorCardTest.swift in Sources */,
+				53EAF61ADACB71B88490E114B061975D /* TCPClientExtStreamingTest.swift in Sources */,
+				0A75BDB69A0BDEB3C875FA5018DF090A /* XCTestManifests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B7A6331B69839AE68529D37177610B7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 006B4F440E1BBC0845688DF8CCBB48FE /* CardSimulationCardReaderProvider */;
+			targetProxy = 86B32568F8DB3AC770091DC9C4554690 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3FFFA63619043998D1C6329566984372 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		682D1738E33762FBE1C6EE8FC8393868 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = DerivedData/CardSimulationCardReaderProvider/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.gematik.ti.cardreader.provider.CardSimulationCardReaderProvider;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		8CB1E3D213149E51D16E952FC6138BC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.gematik.ti.cardreader.provider.CardSimulationCardReaderProviderTests;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EA875FC4EAC355B1FA2EA2BC13BDB581 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = incremental;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F02DCB2A02F38650FB97303103651FB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.gematik.ti.cardreader.provider.CardSimulationCardReaderProviderTests;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FF94EF7F0B7B91967DCD19AAFE2674B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = DerivedData/CardSimulationCardReaderProvider/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.gematik.ti.cardreader.provider.CardSimulationCardReaderProvider;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E0C4DAFE1C4CD1314EB6A6747AE6D644 /* Build configuration list for PBXNativeTarget "CardSimulationCardReaderProviderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F02DCB2A02F38650FB97303103651FB8 /* Debug */,
+				8CB1E3D213149E51D16E952FC6138BC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "";
+		};
+		E53E504CB896733AEDC52EAE29536AD1 /* Build configuration list for PBXProject "CardSimulationCardReaderProvider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA875FC4EAC355B1FA2EA2BC13BDB581 /* Debug */,
+				3FFFA63619043998D1C6329566984372 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F3B88F5BC2455C876659911F39C1144F /* Build configuration list for PBXNativeTarget "CardSimulationCardReaderProvider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF94EF7F0B7B91967DCD19AAFE2674B8 /* Debug */,
+				682D1738E33762FBE1C6EE8FC8393868 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "";
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49FB3BC09EDF64B91751FA780DB233D8 /* Project object */;
+}
