@@ -30,15 +30,14 @@ extension TCPClient: InputStreaming, OutputStreaming {
         guard let availableBytes = bytesAvailable() else {
             return 0
         }
-        do {
-            let bufferSize = min(Int(availableBytes), len)
-            let bytes = try self.read(bufferSize)
-            buffer.assign(from: bytes, count: bytes.count)
-            return bytes.count
-        } catch let error {
-            ALog("Read error: [\(error)]")
+
+        let bufferSize = min(Int(availableBytes), len)
+        guard let bytes = self.read(bufferSize) else {
+            ALog("Read error")
             return -1
         }
+        buffer.assign(from: bytes, count: bytes.count)
+        return bytes.count
     }
 
     var hasSpaceAvailable: Bool {

@@ -14,7 +14,7 @@ CardSimulationCardReaderProvider requires Swift 5.1.
 
 ==== Setup for development
 
-You will need https://bundler.io/[Bundler], https://github.com/yonaskolb/XcodeGen[XcodeGen]
+You will need https://bundler.io/[Bundler], https://github.com/yonaskolb/XcodeGen[XcodeGen], https://github.com/Carthage/Carthage[Carthage]
 and https://fastlane.tools[fastlane] to conveniently use the established development environment.
 
 . Update ruby gems necessary for build commands

@@ -42,25 +42,22 @@ final class SimulatorCardChannelTest: XCTestCase {
         var closedInputStream = false
         var closedOutputStream = false
 
-        var bytesWritten = [Data]()
+        var bytesWritten = Data()
         /// When bytes have written, unlock responses
-        var availableBytes = [Data?]()
-        var lastReadMessage: Int = 0
+        var availableBytes: Data?
 
         var hasBytesAvailable: Bool {
             let writtenCount = bytesWritten.count
             guard !closedInputStream,
                   writtenCount > 0,
-                  availableBytes.count >= writtenCount,
-                  lastReadMessage < writtenCount,
-                  availableBytes[writtenCount - 1] != nil else {
+                  (availableBytes?.count ?? 0) > 0 else {
                 return false
             }
             return true
         }
 
         func read(_ buffer: UnsafeMutablePointer<UInt8>, maxLength len: Int) -> Int {
-            guard hasBytesAvailable, let bytes = availableBytes[bytesWritten.count - 1] else {
+            guard hasBytesAvailable, let bytes = availableBytes else {
                 return 0
             }
             let count = Swift.min(bytes.count, len)
@@ -68,11 +65,13 @@ final class SimulatorCardChannelTest: XCTestCase {
             bytes.withUnsafeBytes {
                 buffer.assign(from: $0, count: count)
             }
-            lastReadMessage += 1
+            availableBytes?.removeFirst(count)
             return count
         }
 
-        var hasSpaceAvailable: Bool { return !closedOutputStream }
+        var hasSpaceAvailable: Bool {
+            return !closedOutputStream
+        }
 
         func write(_ buffer: UnsafePointer<UInt8>, maxLength len: Int) -> Int {
             let data = Data(bytes: buffer, count: len)
@@ -108,14 +107,19 @@ final class SimulatorCardChannelTest: XCTestCase {
 
     func testTransmit() {
         let stream = MockStreaming()
-        guard let responseData = try? Data(bytes: [0x90, 0x00]).berTlvEncoded() else {
+        guard let responseData = try? Data([0x90, 0x00]).berTlvEncoded() else {
             Nimble.fail("Failed to berTlv Encode responseData")
             return
         }
-        stream.availableBytes.append(responseData)
-        let cardChannel = SimulatorCardChannel(card: MockSimulatorCard(), input: stream, output: stream)
-
-        let commandData = Data(bytes: [0x1, 0x2, 0x3, 0x4])
+        stream.availableBytes = responseData
+        let cardChannel = SimulatorCardChannel(
+                card: MockSimulatorCard(),
+                input: stream,
+                output: stream,
+                messageLength: 4096,
+                responseLength: 4096
+        )
+        let commandData = Data([0x1, 0x2, 0x3, 0x4])
         let command: CommandType = MockCommand(bytes: commandData)
         do {
             let response = try cardChannel.transmit(command: command, writeTimeout: 0, readTimeout: 0)
@@ -123,7 +127,7 @@ final class SimulatorCardChannelTest: XCTestCase {
             expect(response.sw).to(equal(APDU.Response.OK.sw))
             // Verify command has been ber TLV encoded and written to output stream
             let berTlvData = try commandData.berTlvEncoded()
-            expect(berTlvData).to(equal(stream.bytesWritten[0]))
+            expect(berTlvData).to(equal(stream.bytesWritten))
             // Close channel
             try cardChannel.close()
             expect(stream.closedInputStream).to(beTrue())
@@ -133,7 +137,87 @@ final class SimulatorCardChannelTest: XCTestCase {
         }
     }
 
-    static var allTests = [
-        ("testTransmit", testTransmit)
+    func testCommandTooLarge() {
+        let stream = MockStreaming()
+        let cardChannel = SimulatorCardChannel(
+                card: MockSimulatorCard(),
+                input: stream,
+                output: stream,
+                messageLength: 10,
+                responseLength: 10
+        )
+        let commandData = Data([UInt8](repeating: 0x8, count: 11))
+        let command: CommandType = MockCommand(bytes: commandData)
+        expect {
+            try cardChannel.transmit(command: command, writeTimeout: 0, readTimeout: 0)
+        }.to(throwError(SimulatorCardChannel.SimulatorError.commandSizeTooLarge(maxSize: 10, length: 11).illegalState))
+    }
+
+    func testResponseTooLarge() {
+        let stream = MockStreaming()
+        guard let responseData = try? Data([UInt8](repeating: 0x8, count: 11)).berTlvEncoded() else {
+            Nimble.fail("Failed to berTlv Encode responseData")
+            return
+        }
+        stream.availableBytes = responseData
+
+        let cardChannel = SimulatorCardChannel(
+                card: MockSimulatorCard(),
+                input: stream,
+                output: stream,
+                messageLength: 10,
+                responseLength: 10
+        )
+        let commandData = Data([0x0, 0x2])
+        let command: CommandType = MockCommand(bytes: commandData)
+        expect {
+            try cardChannel.transmit(command: command, writeTimeout: 0, readTimeout: 0)
+        }.to(throwError(
+                SimulatorCardChannel.SimulatorError.responseSizeTooLarge(maxSize: 10, length: responseData.count)
+                        .illegalState)
+        )
+    }
+
+    func testNoResponse() {
+        let stream = MockStreaming()
+        let cardChannel = SimulatorCardChannel(
+                card: MockSimulatorCard(),
+                input: stream,
+                output: stream,
+                messageLength: 10,
+                responseLength: 10
+        )
+
+        let commandData = Data([0x0, 0x2])
+        let command: CommandType = MockCommand(bytes: commandData)
+        expect {
+            try cardChannel.transmit(command: command, writeTimeout: 0, readTimeout: 0.5)
+        }.to(throwError(SimulatorCardChannel.SimulatorError.noResponse.connectionError))
+    }
+
+    func testEmptyResponse() {
+        let stream = MockStreaming()
+        let cardChannel = SimulatorCardChannel(
+                card: MockSimulatorCard(),
+                input: stream,
+                output: stream,
+                messageLength: 10,
+                responseLength: 10
+        )
+        stream.availableBytes = Data()
+
+        let commandData = Data([0x0, 0x2])
+        let command: CommandType = MockCommand(bytes: commandData)
+        expect {
+            try cardChannel.transmit(command: command, writeTimeout: 0, readTimeout: 0.5)
+        }.to(throwError(SimulatorCardChannel.SimulatorError.noResponse.connectionError))
+    }
+
+    static let allTests = [
+        ("testTransmit", testTransmit),
+        ("testCommandTooLarge", testCommandTooLarge),
+        ("testResponseTooLarge", testResponseTooLarge),
+        ("testNoResponse", testNoResponse),
+        ("testEmptyResponse", testEmptyResponse)
     ]
 }

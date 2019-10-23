@@ -3,7 +3,7 @@ author: gematik Gesellschaft für Telematikanwendungen der Gesundheitskarte mbH
 author_url: http://www.gematik.de
 exclude: /*/internal*
 module: CardSimulationCardReaderProvider
-github_url: http://www.github.com/gematik/CardSimulation-CardReaderProvider.git
+github_url: http://www.github.com/gematik/ref-CardReaderProvider-CardSimulationKit.git
 theme: jony
 xcodebuild_arguments:
 - "-project"

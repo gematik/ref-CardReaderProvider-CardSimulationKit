@@ -83,7 +83,7 @@ final class TCPClientExtStreamingTest: XCTestCase {
             return outputStream.write(bytes, maxLength: message.count)
         }
         expect(bytesWritten).to(equal(message.count))
-        let serverRead = try? Data(bytes: server.read(message.count, timeout: 1))
+        let serverRead = Data(server.read(message.count, timeout: 1)!) //swiftlint:disable:this force_unwrapping
         expect(serverRead).to(equal(message))
         expect(outputStream.hasSpaceAvailable).to(beTrue())
 

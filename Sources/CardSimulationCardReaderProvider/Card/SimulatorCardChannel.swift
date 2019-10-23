@@ -19,11 +19,13 @@ import Foundation
 import GemCommonsKit
 
 public class SimulatorCardChannel: CardChannelType {
-    public enum SimulatorError: Swift.Error {
+    public enum SimulatorError: Swift.Error, Equatable {
         case outputStreamUnavailable
         case noResponse
         case invalidResponse
         case asn1coding(Swift.Error)
+        case commandSizeTooLarge(maxSize: Int, length: Int)
+        case responseSizeTooLarge(maxSize: Int, length: Int)
 
         public var connectionError: CardError {
             return CardError.connectionError(self)
@@ -31,6 +33,20 @@ public class SimulatorCardChannel: CardChannelType {
 
         public var illegalState: CardError {
             return CardError.illegalState(self)
+        }
+
+        public static func == (lhs: SimulatorError, rhs: SimulatorError) -> Bool {
+            switch (lhs, rhs) {
+            case (.outputStreamUnavailable, .outputStreamUnavailable): return true
+            case (.noResponse, .noResponse): return true
+            case (.asn1coding, .asn1coding): return true
+            case (.commandSizeTooLarge(let lhsMax, let lhsSize), .commandSizeTooLarge(let rhsMax, let rhsSize)):
+                return lhsMax == rhsMax && lhsSize == rhsSize
+            case (.responseSizeTooLarge(let lhsMax, let lhsSize), .responseSizeTooLarge(let rhsMax, let rhsSize)):
+                return lhsMax == rhsMax && lhsSize == rhsSize
+            default:
+                return false
+            }
         }
     }
 
@@ -45,8 +61,8 @@ public class SimulatorCardChannel: CardChannelType {
     init(card: CardType,
          input: InputStreaming,
          output: OutputStreaming,
-         messageLength: Int = 4096,
-         responseLength: Int = 4096,
+         messageLength: Int,
+         responseLength: Int,
          extendedLengthSupport: Bool = true
     ) {
         self.card = card
@@ -68,6 +84,10 @@ public class SimulatorCardChannel: CardChannelType {
         guard outputStream.hasSpaceAvailable else {
             throw SimulatorError.outputStreamUnavailable.illegalState
         }
+        guard command.bytes.count <= maxMessageLength else {
+            throw SimulatorError.commandSizeTooLarge(maxSize: maxMessageLength, length: command.bytes.count)
+                    .illegalState
+        }
         let message = try command.bytes.berTlvEncoded()
         DLog("SEND:     \(message.map { String(format: "%02hhX", $0) }.joined())") // hexString
         _ = message.withUnsafeBytes {
@@ -76,7 +96,7 @@ public class SimulatorCardChannel: CardChannelType {
 
         var buffer = [UInt8](repeating: 0x0, count: maxResponseLength)
         var responseData = Data()
-        let timeoutTime = Date(timeIntervalSinceNow: readTimeout)
+        let timeoutTime = (readTimeout == 0) ? Date.distantFuture : Date(timeIntervalSinceNow: readTimeout)
         repeat {
             guard inputStream.hasBytesAvailable else {
                 RunLoop.current.run(mode: .default, before: Date(timeIntervalSinceNow: 0.05))
@@ -96,6 +116,11 @@ public class SimulatorCardChannel: CardChannelType {
             ALog("Error when reading the response from the CardSimulator connection" +
                     " or there were no bytes available to be read.")
             throw SimulatorError.noResponse.connectionError
+        }
+
+        guard responseData.count <= maxResponseLength else {
+            throw SimulatorError.responseSizeTooLarge(maxSize: maxResponseLength, length: responseData.count)
+                    .illegalState
         }
 
         DLog("RESPONSE: \(responseData.map { String(format: "%02hhX", $0) }.joined())") // hexString

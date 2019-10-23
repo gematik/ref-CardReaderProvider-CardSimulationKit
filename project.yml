@@ -7,6 +7,8 @@ options:
   minimumXcodeGenVersion: 2.3.0
 settings:
   base:
+    DEVELOPMENT_TEAM: A9FL89PFFL
+    CODE_SIGN_IDENTITY: ""
     SWIFT_VERSION: 5.0
     ALWAYS_SEARCH_USER_PATHS: NO
     FRAMEWORK_SEARCH_PATHS: "$(inherited)"
@@ -27,7 +29,8 @@ targets:
       - carthage: ASN1Kit
       - carthage: CardReaderProviderApi
       - carthage: CardReaderAccess
-      - carthage: CardSimulationLoader
+      - carthage: ref-CardSimulationLoaderKit
+        findFrameworks: true
       - carthage: SwiftSocket
       - carthage: GemCommonsKit
       - carthage: ObjCCommonsKit

@@ -27,6 +27,9 @@ public class SimulatorCard: CardType {
     let connectTimeout: Int
     var basicChannel: SimulatorCardChannel?
 
+    public var maxMessageLength: Int = 4096
+    public var maxResponseLength: Int = 4096
+
     required init(host: String, port: Int32, channel `protocol`: CardProtocol = .t1, timeout: Int = 10) {
         self.protocol = `protocol`
         self.atr = Data.empty
@@ -39,7 +42,13 @@ public class SimulatorCard: CardType {
         let client = TCPClient(address: host, port: port)
         switch client.connect(timeout: connectTimeout) {
         case .success:
-            return SimulatorCardChannel(card: self, input: client, output: client)
+            return SimulatorCardChannel(
+                    card: self,
+                    input: client,
+                    output: client,
+                    messageLength: maxMessageLength,
+                    responseLength: maxResponseLength
+            )
         case .failure(let error):
             throw CardError.connectionError(error)
         }
