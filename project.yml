@@ -29,8 +29,7 @@ targets:
       - carthage: ASN1Kit
       - carthage: CardReaderProviderApi
       - carthage: CardReaderAccess
-      - carthage: ref-CardSimulationLoaderKit
-        findFrameworks: true
+      - carthage: CardSimulationLoader
       - carthage: SwiftSocket
       - carthage: GemCommonsKit
       - carthage: ObjCCommonsKit
@@ -48,6 +47,7 @@ targets:
       - carthage: Nimble
       - carthage: ObjCCommonsKit
       - carthage: AEXML
+      - carthage: AEXMLExt
       - carthage: DataKit
         link: false
       - carthage: StreamReader

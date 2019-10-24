@@ -16,25 +16,27 @@
 		2D17CD081AA31465B73ACB02D2DD282E /* SwiftSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA96C1C87ECFDE58F6A15DB74AA5EC6 /* SwiftSocket.framework */; };
 		3406A5E0735D36AC07982C1735608D18 /* SimulatorCardReaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382422DD3D2765E3C715BB1762DCFC1C /* SimulatorCardReaderTest.swift */; };
 		348509C050B56E6290EAD76261B58F8B /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D584263A9F99A552EC7F7D006A4781E6 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3EDA9E0929807D5F55716B176C464E42 /* AEXMLExt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF65DF5BB32DEA997345CE1D8991156 /* AEXMLExt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		40CDAB78FA346BA2F9EA44DFDE87888A /* SimulatorCardChannelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D61C7C131325DA65AD78F6CF83379 /* SimulatorCardChannelTest.swift */; };
 		4897E94548A4C328034FA7317FBA3B69 /* SimulatorCardTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A04D17EAF9E0DF38FF7DA26B7AB29C /* SimulatorCardTest.swift */; };
+		4C46966490968B04BD5932F5A8891991 /* CardSimulationLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D6159A0CA653C1A3F1793E9D925FE9 /* CardSimulationLoader.framework */; };
 		4C514AE0C5462A3A5A4F1F961F96208B /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A07BDE36C8EEA8AD28F566CF642AADC /* AEXML.framework */; };
 		53EAF61ADACB71B88490E114B061975D /* TCPClientExtStreamingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4966D8AA9BD94456091BD9C65A29A40C /* TCPClientExtStreamingTest.swift */; };
 		58B6B4CEA0E3B2F14CC8FAF1F3241E66 /* CardReaderProviderApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8AF3B48BC0351AB9A8EA3399901C56C /* CardReaderProviderApi.framework */; };
 		59DDA413E351A1C1DB8E4CCF3DA03B78 /* CardSimulationCardReaderProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBC672538E66ADB46DD4DD55C44696E /* CardSimulationCardReaderProvider.framework */; };
 		5E5D84EA247C7474DCB7DFEF71426297 /* ObjCCommonsKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FF558B91022964AB98D6E339337C5506 /* ObjCCommonsKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6E5682587E07363AA47DE234B9A5060F /* DataKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED641762AD8C3C1FFF486585B6E19A50 /* DataKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7076DF98371C75418A8E5A7D4F7E3903 /* ref-CardSimulationLoaderKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35AB2981E8930CE2E65A23C34E8794AE /* ref-CardSimulationLoaderKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		79D97F906BD7A33A2DDD6E54BC03C7D2 /* MockSimulationRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666827757EC6FE9E37ADD7EAF9A7CA52 /* MockSimulationRunner.swift */; };
 		888920E934FA28CAED44F569A51A5123 /* StreamReader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 33CF799FF298837E35DBE94D6C545793 /* StreamReader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88CC6BAFB03D83411E489B082EF50B1B /* AEXMLExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF65DF5BB32DEA997345CE1D8991156 /* AEXMLExt.framework */; };
 		8F7859741099B9C8781320E1CA2D7941 /* SimulatorCardReaderProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C07BD4C1A521468D374AF525F889F4 /* SimulatorCardReaderProviderTest.swift */; };
 		96214434134198D7F46E2588AC7A5370 /* GemCommonsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8F95809396AE0F80A04A7167C9FD7B /* GemCommonsKit.framework */; };
 		9A18F7F59564EC21F457591867302398 /* InputStreaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE460AC1D61CDBCBE30883FA46C4562A /* InputStreaming.swift */; };
 		9A598F1C647EB9C2772815F5EF7858C1 /* ObjCCommonsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF558B91022964AB98D6E339337C5506 /* ObjCCommonsKit.framework */; };
 		9CB9B01D5699D3F2F43C79B6FCA6E749 /* MockSimulationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E97DE3005DD16761AF910AE5D32DB37 /* MockSimulationManager.swift */; };
 		A4139D072F4F2167D1F998132F6A8247 /* OutputStreaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3786BD9951F89C9E9EEF82DE29821615 /* OutputStreaming.swift */; };
+		A43143C14913FDE6D39A8D5E9944C06E /* CardSimulationLoader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55D6159A0CA653C1A3F1793E9D925FE9 /* CardSimulationLoader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1CF9BDD915E006F0012618D04B1B4BE /* SwiftSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA96C1C87ECFDE58F6A15DB74AA5EC6 /* SwiftSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B2D0BB35DC6C4C68E1A7EBB386AD14FF /* ref-CardSimulationLoaderKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35AB2981E8930CE2E65A23C34E8794AE /* ref-CardSimulationLoaderKit.framework */; };
 		B36AF5FD2FCBDA7DA910055728A3A945 /* DataExtBerTLVTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6168EA6CDDF775BE3D347730A28C7A0B /* DataExtBerTLVTest.swift */; };
 		B3A4386E1598982652CA14E4148E3567 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D584263A9F99A552EC7F7D006A4781E6 /* Nimble.framework */; };
 		B605F84BE5C60C9572CFF572E0B32314 /* SimulatorCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C44EA6D5AA55BD05E216176539D755 /* SimulatorCard.swift */; };
@@ -70,16 +72,17 @@
 			files = (
 				DC49A9668874B66FC20E57EB3E28BABB /* CardSimulationCardReaderProvider.framework in Embed Frameworks */,
 				F2EB7B40B98580C7C21B243F631F452D /* AEXML.framework in Embed Frameworks */,
+				3EDA9E0929807D5F55716B176C464E42 /* AEXMLExt.framework in Embed Frameworks */,
 				B790D52C52BFD03C69DF5FA4283EE13A /* ASN1Kit.framework in Embed Frameworks */,
 				0D3E0E56BC8738D273C9A6FBA54ECD25 /* CardReaderAccess.framework in Embed Frameworks */,
 				DE1086CEB5CCC70C9283F57660143E3D /* CardReaderProviderApi.framework in Embed Frameworks */,
+				A43143C14913FDE6D39A8D5E9944C06E /* CardSimulationLoader.framework in Embed Frameworks */,
 				6E5682587E07363AA47DE234B9A5060F /* DataKit.framework in Embed Frameworks */,
 				C3055321807BC3681C046F504629F46E /* GemCommonsKit.framework in Embed Frameworks */,
 				348509C050B56E6290EAD76261B58F8B /* Nimble.framework in Embed Frameworks */,
 				5E5D84EA247C7474DCB7DFEF71426297 /* ObjCCommonsKit.framework in Embed Frameworks */,
 				888920E934FA28CAED44F569A51A5123 /* StreamReader.framework in Embed Frameworks */,
 				B1CF9BDD915E006F0012618D04B1B4BE /* SwiftSocket.framework in Embed Frameworks */,
-				7076DF98371C75418A8E5A7D4F7E3903 /* ref-CardSimulationLoaderKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,13 +95,13 @@
 		2023CEDA4CBFEB4A8C09FDE72B05DF4A /* ASN1Kit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ASN1Kit.framework; sourceTree = "<group>"; };
 		22AABEAF892DF17F16F89653FF79168D /* SimulatorCardChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorCardChannel.swift; sourceTree = "<group>"; };
 		33CF799FF298837E35DBE94D6C545793 /* StreamReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StreamReader.framework; sourceTree = "<group>"; };
-		35AB2981E8930CE2E65A23C34E8794AE /* ref-CardSimulationLoaderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "ref-CardSimulationLoaderKit.framework"; sourceTree = "<group>"; };
 		3786BD9951F89C9E9EEF82DE29821615 /* OutputStreaming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputStreaming.swift; sourceTree = "<group>"; };
 		382422DD3D2765E3C715BB1762DCFC1C /* SimulatorCardReaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorCardReaderTest.swift; sourceTree = "<group>"; };
 		39E3792D40C5AF8FEE4C1C899C94E5AB /* CardSimulationCardReaderProviderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardSimulationCardReaderProviderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40828C46FABBA0EB87FC8645FB9F33C2 /* CardReaderAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CardReaderAccess.framework; sourceTree = "<group>"; };
 		4966D8AA9BD94456091BD9C65A29A40C /* TCPClientExtStreamingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPClientExtStreamingTest.swift; sourceTree = "<group>"; };
 		4DBC672538E66ADB46DD4DD55C44696E /* CardSimulationCardReaderProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CardSimulationCardReaderProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55D6159A0CA653C1A3F1793E9D925FE9 /* CardSimulationLoader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CardSimulationLoader.framework; sourceTree = "<group>"; };
 		5A99BEDC71B6A2EFB2ABED82733B29A9 /* SimulatorCardReaderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorCardReaderProvider.swift; sourceTree = "<group>"; };
 		609CC70EB7EE3E3A830C190F1F2A4C5B /* Data+BerTLV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+BerTLV.swift"; sourceTree = "<group>"; };
 		6168EA6CDDF775BE3D347730A28C7A0B /* DataExtBerTLVTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtBerTLVTest.swift; sourceTree = "<group>"; };
@@ -107,6 +110,7 @@
 		7A07BDE36C8EEA8AD28F566CF642AADC /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AEXML.framework; sourceTree = "<group>"; };
 		7E97DE3005DD16761AF910AE5D32DB37 /* MockSimulationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSimulationManager.swift; sourceTree = "<group>"; };
 		85953C3D214005B243B1457FA950F4E0 /* SimulatorCardReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorCardReader.swift; sourceTree = "<group>"; };
+		8AF65DF5BB32DEA997345CE1D8991156 /* AEXMLExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AEXMLExt.framework; sourceTree = "<group>"; };
 		9CA96C1C87ECFDE58F6A15DB74AA5EC6 /* SwiftSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftSocket.framework; sourceTree = "<group>"; };
 		A19A3AFFA53E6A9D77DD9A5C2B8EB427 /* SimulatorCardReaderControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorCardReaderControllerTest.swift; sourceTree = "<group>"; };
 		A8AF3B48BC0351AB9A8EA3399901C56C /* CardReaderProviderApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CardReaderProviderApi.framework; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 				B3A4386E1598982652CA14E4148E3567 /* Nimble.framework in Frameworks */,
 				9A598F1C647EB9C2772815F5EF7858C1 /* ObjCCommonsKit.framework in Frameworks */,
 				4C514AE0C5462A3A5A4F1F961F96208B /* AEXML.framework in Frameworks */,
+				88CC6BAFB03D83411E489B082EF50B1B /* AEXMLExt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +145,7 @@
 				E483775F04437AF8BDD013CC8E04797B /* ASN1Kit.framework in Frameworks */,
 				58B6B4CEA0E3B2F14CC8FAF1F3241E66 /* CardReaderProviderApi.framework in Frameworks */,
 				CB2064C554054B2AFA5F083B0A1AE699 /* CardReaderAccess.framework in Frameworks */,
-				B2D0BB35DC6C4C68E1A7EBB386AD14FF /* ref-CardSimulationLoaderKit.framework in Frameworks */,
+				4C46966490968B04BD5932F5A8891991 /* CardSimulationLoader.framework in Frameworks */,
 				2D17CD081AA31465B73ACB02D2DD282E /* SwiftSocket.framework in Frameworks */,
 				96214434134198D7F46E2588AC7A5370 /* GemCommonsKit.framework in Frameworks */,
 				1942DF8CF3C46D6A573B661DC61F9F52 /* ObjCCommonsKit.framework in Frameworks */,
@@ -269,14 +274,15 @@
 			isa = PBXGroup;
 			children = (
 				7A07BDE36C8EEA8AD28F566CF642AADC /* AEXML.framework */,
+				8AF65DF5BB32DEA997345CE1D8991156 /* AEXMLExt.framework */,
 				2023CEDA4CBFEB4A8C09FDE72B05DF4A /* ASN1Kit.framework */,
 				40828C46FABBA0EB87FC8645FB9F33C2 /* CardReaderAccess.framework */,
 				A8AF3B48BC0351AB9A8EA3399901C56C /* CardReaderProviderApi.framework */,
+				55D6159A0CA653C1A3F1793E9D925FE9 /* CardSimulationLoader.framework */,
 				ED641762AD8C3C1FFF486585B6E19A50 /* DataKit.framework */,
 				0F8F95809396AE0F80A04A7167C9FD7B /* GemCommonsKit.framework */,
 				D584263A9F99A552EC7F7D006A4781E6 /* Nimble.framework */,
 				FF558B91022964AB98D6E339337C5506 /* ObjCCommonsKit.framework */,
-				35AB2981E8930CE2E65A23C34E8794AE /* ref-CardSimulationLoaderKit.framework */,
 				33CF799FF298837E35DBE94D6C545793 /* StreamReader.framework */,
 				9CA96C1C87ECFDE58F6A15DB74AA5EC6 /* SwiftSocket.framework */,
 			);
