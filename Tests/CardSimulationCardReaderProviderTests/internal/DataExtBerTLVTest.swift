@@ -24,8 +24,8 @@ import XCTest
 final class DataExtBerTLVTest: XCTestCase {
 
     func testBerTLV_encode() {
-        let apdu = Data(bytes: [0x00, 0xA4, 0x02, 0x0C, 0x02, 0x2F, 0x01])
-        let expected = Data(bytes: [0x80, 0x07, 0x00, 0xA4, 0x02, 0x0C, 0x02, 0x2F, 0x01])
+        let apdu = Data([0x00, 0xA4, 0x02, 0x0C, 0x02, 0x2F, 0x01])
+        let expected = Data([0x80, 0x07, 0x00, 0xA4, 0x02, 0x0C, 0x02, 0x2F, 0x01])
 
         expect {
             try apdu.berTlvEncoded()
@@ -34,8 +34,8 @@ final class DataExtBerTLVTest: XCTestCase {
 
     func testBerTLV_encode_7f() {
         let size = 0x7f
-        let header = Data(bytes: [0x80, UInt8(size)])
-        let apdu = Data(bytes: [UInt8](repeating: 0x11, count: size))
+        let header = Data([0x80, UInt8(size)])
+        let apdu = Data([UInt8](repeating: 0x11, count: size))
         let expected = header + apdu
 
         expect {
@@ -45,8 +45,8 @@ final class DataExtBerTLVTest: XCTestCase {
 
     func testBerTLV_encode_80() {
         let size = 0x80
-        let header = Data(bytes: [0x80, 0x81, UInt8(size)])
-        let apdu = Data(bytes: [UInt8](repeating: 0x11, count: size))
+        let header = Data([0x80, 0x81, UInt8(size)])
+        let apdu = Data([UInt8](repeating: 0x11, count: size))
         let expected = header + apdu
 
         expect {
@@ -56,8 +56,8 @@ final class DataExtBerTLVTest: XCTestCase {
 
     func testBerTLV_encode_ff() {
         let size = 0xff
-        let header = Data(bytes: [0x80, 0x81, UInt8(size)])
-        let apdu = Data(bytes: [UInt8](repeating: 0x11, count: size))
+        let header = Data([0x80, 0x81, UInt8(size)])
+        let apdu = Data([UInt8](repeating: 0x11, count: size))
         let expected = header + apdu
 
         expect {
@@ -67,8 +67,8 @@ final class DataExtBerTLVTest: XCTestCase {
 
     func testBerTLV_encode_100() {
         let size = 0x100
-        let header = Data(bytes: [0x80, 0x82, 0x1, 0x0])
-        let apdu = Data(bytes: [UInt8](repeating: 0x11, count: size))
+        let header = Data([0x80, 0x82, 0x1, 0x0])
+        let apdu = Data([UInt8](repeating: 0x11, count: size))
         let expected = header + apdu
 
         expect {
@@ -78,8 +78,8 @@ final class DataExtBerTLVTest: XCTestCase {
 
     func testBerTLV_encode_ffff() {
         let size = 0xffff
-        let header = Data(bytes: [0x80, 0x82, 0xff, 0xff])
-        let apdu = Data(bytes: [UInt8](repeating: 0x11, count: size))
+        let header = Data([0x80, 0x82, 0xff, 0xff])
+        let apdu = Data([UInt8](repeating: 0x11, count: size))
         let expected = header + apdu
 
         expect {
@@ -89,8 +89,8 @@ final class DataExtBerTLVTest: XCTestCase {
 
     func testBerTLV_encode_10000() {
         let size = 0x10000
-        let header = Data(bytes: [0x80, 0x83, 0x1, 0x0, 0x0])
-        let apdu = Data(bytes: [UInt8](repeating: 0x11, count: size))
+        let header = Data([0x80, 0x83, 0x1, 0x0, 0x0])
+        let apdu = Data([UInt8](repeating: 0x11, count: size))
         let expected = header + apdu
 
         expect {
@@ -100,8 +100,8 @@ final class DataExtBerTLVTest: XCTestCase {
 
     func testBerTLV_encode_ffffff() {
         let size = 0xffffff
-        let header = Data(bytes: [0x80, 0x83, 0xff, 0xff, 0xff])
-        let apdu = Data(bytes: [UInt8](repeating: 0x11, count: size))
+        let header = Data([0x80, 0x83, 0xff, 0xff, 0xff])
+        let apdu = Data([UInt8](repeating: 0x11, count: size))
         let expected = header + apdu
 
         expect {
@@ -111,8 +111,8 @@ final class DataExtBerTLVTest: XCTestCase {
 
     func testBerTLV_encode_1000000() {
         let size = 0x1000000
-        let header = Data(bytes: [0x80, 0x84, 0x1, 0x0, 0x0, 0x0])
-        let apdu = Data(bytes: [UInt8](repeating: 0x11, count: size))
+        let header = Data([0x80, 0x84, 0x1, 0x0, 0x0, 0x0])
+        let apdu = Data([UInt8](repeating: 0x11, count: size))
         let expected = header + apdu
 
         expect {
@@ -122,8 +122,8 @@ final class DataExtBerTLVTest: XCTestCase {
 
     func testBerTLV_encode_1020415() {
         let size = 0x1020415
-        let header = Data(bytes: [0x80, 0x84, 0x1, 0x2, 0x4, 0x15])
-        let apdu = Data(bytes: [UInt8](repeating: 0x11, count: size))
+        let header = Data([0x80, 0x84, 0x1, 0x2, 0x4, 0x15])
+        let apdu = Data([UInt8](repeating: 0x11, count: size))
         let expected = header + apdu
 
         expect {
@@ -132,8 +132,8 @@ final class DataExtBerTLVTest: XCTestCase {
     }
 
     func testBerTLV_decode() {
-        let berTlvAPDU = Data(bytes: [0x80, 0x07, 0x00, 0xA4, 0x02, 0x0C, 0x02, 0x2F, 0x01])
-        let expected = Data(bytes: [0x00, 0xA4, 0x02, 0x0C, 0x02, 0x2F, 0x01])
+        let berTlvAPDU = Data([0x80, 0x07, 0x00, 0xA4, 0x02, 0x0C, 0x02, 0x2F, 0x01])
+        let expected = Data([0x00, 0xA4, 0x02, 0x0C, 0x02, 0x2F, 0x01])
 
         expect {
             try berTlvAPDU.berTlvDecoded()
@@ -142,83 +142,83 @@ final class DataExtBerTLVTest: XCTestCase {
 
     func testBerTLV_decode_7f() {
         let apdu = [UInt8](repeating: 0x11, count: 0x7f)
-        let berTlvAPDU = Data(bytes: ([0x80, 0x7f] + apdu))
+        let berTlvAPDU = Data(([0x80, 0x7f] + apdu))
 
         expect {
             try berTlvAPDU.berTlvDecoded()
-        }.to(equal(Data(bytes: apdu)))
+        }.to(equal(Data(apdu)))
     }
 
     func testBerTLV_decode_80() {
         let apdu = [UInt8](repeating: 0x11, count: 0x80)
-        let berTlvAPDU = Data(bytes: ([0x80, 0x81, 0x80] + apdu))
+        let berTlvAPDU = Data(([0x80, 0x81, 0x80] + apdu))
 
         expect {
             try berTlvAPDU.berTlvDecoded()
-        }.to(equal(Data(bytes: apdu)))
+        }.to(equal(Data(apdu)))
     }
 
     func testBerTLV_decode_ff() {
         let apdu = [UInt8](repeating: 0x11, count: 0xff)
-        let berTlvAPDU = Data(bytes: ([0x80, 0x81, 0xff] + apdu))
+        let berTlvAPDU = Data(([0x80, 0x81, 0xff] + apdu))
 
         expect {
             try berTlvAPDU.berTlvDecoded()
-        }.to(equal(Data(bytes: apdu)))
+        }.to(equal(Data(apdu)))
     }
 
     func testBerTLV_decode_100() {
         let apdu = [UInt8](repeating: 0x11, count: 0x100)
-        let berTlvAPDU = Data(bytes: ([0x80, 0x82, 0x1, 0x0] + apdu))
+        let berTlvAPDU = Data(([0x80, 0x82, 0x1, 0x0] + apdu))
 
         expect {
             try berTlvAPDU.berTlvDecoded()
-        }.to(equal(Data(bytes: apdu)))
+        }.to(equal(Data(apdu)))
     }
 
     func testBerTLV_decode_ffff() {
         let apdu = [UInt8](repeating: 0x11, count: 0xffff)
-        let berTlvAPDU = Data(bytes: ([0x80, 0x82, 0xff, 0xff] + apdu))
+        let berTlvAPDU = Data(([0x80, 0x82, 0xff, 0xff] + apdu))
 
         expect {
             try berTlvAPDU.berTlvDecoded()
-        }.to(equal(Data(bytes: apdu)))
+        }.to(equal(Data(apdu)))
     }
 
     func testBerTLV_decode_10000() {
         let apdu = [UInt8](repeating: 0x11, count: 0x10000)
-        let berTlvAPDU = Data(bytes: ([0x80, 0x83, 0x1, 0x0, 0x0] + apdu))
+        let berTlvAPDU = Data(([0x80, 0x83, 0x1, 0x0, 0x0] + apdu))
 
         expect {
             try berTlvAPDU.berTlvDecoded()
-        }.to(equal(Data(bytes: apdu)))
+        }.to(equal(Data(apdu)))
     }
 
     func testBerTLV_decode_ffffff() {
         let apdu = [UInt8](repeating: 0x11, count: 0xffffff)
-        let berTlvAPDU = Data(bytes: ([0x80, 0x83, 0xff, 0xff, 0xff] + apdu))
+        let berTlvAPDU = Data(([0x80, 0x83, 0xff, 0xff, 0xff] + apdu))
 
         expect {
             try berTlvAPDU.berTlvDecoded()
-        }.to(equal(Data(bytes: apdu)))
+        }.to(equal(Data(apdu)))
     }
 
     func testBerTLV_decode_1000000() {
         let apdu = [UInt8](repeating: 0x11, count: 0x1000000)
-        let berTlvAPDU = Data(bytes: ([0x80, 0x84, 0x1, 0x0, 0x0, 0x0] + apdu))
+        let berTlvAPDU = Data(([0x80, 0x84, 0x1, 0x0, 0x0, 0x0] + apdu))
 
         expect {
             try berTlvAPDU.berTlvDecoded()
-        }.to(equal(Data(bytes: apdu)))
+        }.to(equal(Data(apdu)))
     }
 
     func testBerTLV_decode_1020415() {
         let apdu = [UInt8](repeating: 0x11, count: 0x1020415)
-        let berTlvAPDU = Data(bytes: ([0x80, 0x84, 0x1, 0x2, 0x4, 0x15] + apdu))
+        let berTlvAPDU = Data(([0x80, 0x84, 0x1, 0x2, 0x4, 0x15] + apdu))
 
         expect {
             try berTlvAPDU.berTlvDecoded()
-        }.to(equal(Data(bytes: apdu)))
+        }.to(equal(Data(apdu)))
     }
 
     static var allTests = [

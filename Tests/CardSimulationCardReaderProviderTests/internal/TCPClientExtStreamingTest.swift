@@ -54,7 +54,7 @@ final class TCPClientExtStreamingTest: XCTestCase {
         let inputStream = client as InputStreaming
         expect(inputStream.hasBytesAvailable).to(beFalse())
 
-        let message = Data(bytes: [0x1, 0x2, 0x3, 0x4])
+        let message = Data([0x1, 0x2, 0x3, 0x4])
         _ = server.send(data: message)
 
         expect(inputStream.hasBytesAvailable).toEventually(beTrue())
@@ -63,7 +63,7 @@ final class TCPClientExtStreamingTest: XCTestCase {
 
         expect(readBytes).to(equal(4))
         expect(inputStream.hasBytesAvailable).to(beFalse())
-        expect(Data(bytes: Array(receivedMessage[0..<readBytes]))).to(equal(message))
+        expect(Data(Array(receivedMessage[0..<readBytes]))).to(equal(message))
     }
 
     func testTCPClient_output_streaming() {
@@ -78,7 +78,7 @@ final class TCPClientExtStreamingTest: XCTestCase {
         }
         expect(outputStream.hasSpaceAvailable).to(beTrue())
 
-        let message = Data(bytes: [0x8, 0x7, 0x6, 0x5, 0x4, 0x3, 0x2, 0x1])
+        let message = Data([0x8, 0x7, 0x6, 0x5, 0x4, 0x3, 0x2, 0x1])
         let bytesWritten = message.withUnsafeBytes { bytes in
             return outputStream.write(bytes, maxLength: message.count)
         }
@@ -88,8 +88,6 @@ final class TCPClientExtStreamingTest: XCTestCase {
         expect(outputStream.hasSpaceAvailable).to(beTrue())
 
         server.close()
-        outputStream.closeOutputStream()
-        expect(outputStream.hasSpaceAvailable).to(beFalse())
     }
 
     static var allTests = [

@@ -17,6 +17,11 @@
 import CardReaderProviderApi
 import Foundation
 import GemCommonsKit
+import SwiftSocket
+
+protocol TCPClientType: InputStreaming, OutputStreaming {
+    func close() throws
+}
 
 public class SimulatorCardChannel: CardChannelType {
     public enum SimulatorError: Swift.Error, Equatable {
@@ -55,19 +60,22 @@ public class SimulatorCardChannel: CardChannelType {
     public private(set) var extendedLengthSupported: Bool
     public private(set) var maxMessageLength: Int
     public private(set) var maxResponseLength: Int
-    let inputStream: InputStreaming
-    let outputStream: OutputStreaming
+    let tcpClient: TCPClientType
+    var inputStream: InputStreaming {
+        return tcpClient
+    }
+    var outputStream: OutputStreaming {
+        return tcpClient
+    }
 
     init(card: CardType,
-         input: InputStreaming,
-         output: OutputStreaming,
+         client: TCPClientType,
          messageLength: Int,
          responseLength: Int,
          extendedLengthSupport: Bool = true
     ) {
         self.card = card
-        inputStream = input
-        outputStream = output
+        tcpClient = client
         maxMessageLength = messageLength
         maxResponseLength = responseLength
         extendedLengthSupported = extendedLengthSupport
@@ -118,17 +126,17 @@ public class SimulatorCardChannel: CardChannelType {
             throw SimulatorError.noResponse.connectionError
         }
 
-        guard responseData.count <= maxResponseLength else {
+        DLog("RESPONSE: \(responseData.map { String(format: "%02hhX", $0) }.joined())") // hexString
+        let extractedResponseData = try responseData.berTlvDecoded()
+        guard extractedResponseData.count <= maxResponseLength else {
             throw SimulatorError.responseSizeTooLarge(maxSize: maxResponseLength, length: responseData.count)
                     .illegalState
         }
 
-        DLog("RESPONSE: \(responseData.map { String(format: "%02hhX", $0) }.joined())") // hexString
-        return try APDU.Response(apdu: responseData.berTlvDecoded())
+        return try APDU.Response(apdu: extractedResponseData)
     }
 
     public func close() throws {
-        inputStream.closeInputStream()
-        outputStream.closeOutputStream()
+        try tcpClient.close()
     }
 }

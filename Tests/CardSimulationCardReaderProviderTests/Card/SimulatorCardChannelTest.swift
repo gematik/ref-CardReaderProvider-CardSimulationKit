@@ -38,7 +38,7 @@ final class SimulatorCardChannelTest: XCTestCase {
         func disconnect(reset: Bool) throws {}
     }
 
-    class MockStreaming: InputStreaming, OutputStreaming {
+    class MockStreaming: TCPClientType {
         var closedInputStream = false
         var closedOutputStream = false
 
@@ -79,11 +79,8 @@ final class SimulatorCardChannelTest: XCTestCase {
             return data.count
         }
 
-        func closeInputStream() {
+        func close() throws {
             closedInputStream = true
-        }
-
-        func closeOutputStream() {
             closedOutputStream = true
         }
     }
@@ -114,8 +111,7 @@ final class SimulatorCardChannelTest: XCTestCase {
         stream.availableBytes = responseData
         let cardChannel = SimulatorCardChannel(
                 card: MockSimulatorCard(),
-                input: stream,
-                output: stream,
+                client: stream,
                 messageLength: 4096,
                 responseLength: 4096
         )
@@ -141,8 +137,7 @@ final class SimulatorCardChannelTest: XCTestCase {
         let stream = MockStreaming()
         let cardChannel = SimulatorCardChannel(
                 card: MockSimulatorCard(),
-                input: stream,
-                output: stream,
+                client: stream,
                 messageLength: 10,
                 responseLength: 10
         )
@@ -163,8 +158,7 @@ final class SimulatorCardChannelTest: XCTestCase {
 
         let cardChannel = SimulatorCardChannel(
                 card: MockSimulatorCard(),
-                input: stream,
-                output: stream,
+                client: stream,
                 messageLength: 10,
                 responseLength: 10
         )
@@ -182,8 +176,7 @@ final class SimulatorCardChannelTest: XCTestCase {
         let stream = MockStreaming()
         let cardChannel = SimulatorCardChannel(
                 card: MockSimulatorCard(),
-                input: stream,
-                output: stream,
+                client: stream,
                 messageLength: 10,
                 responseLength: 10
         )
@@ -199,8 +192,7 @@ final class SimulatorCardChannelTest: XCTestCase {
         let stream = MockStreaming()
         let cardChannel = SimulatorCardChannel(
                 card: MockSimulatorCard(),
-                input: stream,
-                output: stream,
+                client: stream,
                 messageLength: 10,
                 responseLength: 10
         )

@@ -25,7 +25,11 @@ public class SimulatorCard: CardType {
     let host: String
     let port: Int32
     let connectTimeout: Int
-    var basicChannel: SimulatorCardChannel?
+    var basicChannel: SimulatorCardChannel? {
+        didSet {
+            try? oldValue?.close()
+        }
+    }
 
     public var maxMessageLength: Int = 4096
     public var maxResponseLength: Int = 4096
@@ -42,13 +46,13 @@ public class SimulatorCard: CardType {
         let client = TCPClient(address: host, port: port)
         switch client.connect(timeout: connectTimeout) {
         case .success:
-            return SimulatorCardChannel(
+            basicChannel = SimulatorCardChannel(
                     card: self,
-                    input: client,
-                    output: client,
+                    client: client,
                     messageLength: maxMessageLength,
                     responseLength: maxResponseLength
             )
+            return basicChannel! //swiftlint:disable:this force_unwrapping
         case .failure(let error):
             throw CardError.connectionError(error)
         }

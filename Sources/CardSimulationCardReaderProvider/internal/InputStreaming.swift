@@ -20,6 +20,4 @@ protocol InputStreaming {
     var hasBytesAvailable: Bool { get }
 
     func read(_ buffer: UnsafeMutablePointer<UInt8>, maxLength len: Int) -> Int
-
-    func closeInputStream()
 }

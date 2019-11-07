@@ -18,7 +18,7 @@ import Foundation
 import GemCommonsKit
 import SwiftSocket
 
-extension TCPClient: InputStreaming, OutputStreaming {
+extension TCPClient: TCPClientType {
     var hasBytesAvailable: Bool {
         guard let availableBytes = bytesAvailable() else {
             return false
@@ -50,13 +50,5 @@ extension TCPClient: InputStreaming, OutputStreaming {
         case .failure: return -1
         case .success: return data.count
         }
-    }
-
-    func closeOutputStream() {
-        self.close()
-    }
-
-    func closeInputStream() {
-        self.close()
     }
 }

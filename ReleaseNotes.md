@@ -1,3 +1,6 @@
+# Release 1.0.4
+- Don't attribute for the BER-TLV encoding in the max response length
+
 # Release 1.0.2
 fixed carthage dependency in proyect.yml
 
